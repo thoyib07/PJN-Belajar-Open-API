@@ -1,0 +1,32 @@
+{
+    "openAPI" : "3.0.3",
+    "info": {
+        "title": "API TodoList application",
+        "version": "1.0",
+        "description": "Test create swagger documentation application TodoList",
+        "contact": {
+            "name": "Thoyib Hidayat",
+            "email": "thoyibh07@gmail.com",
+            "url": "https://thoyib07.github.io"
+        },
+        "termsOfService": "https://thoyib07.github.io",
+        "license": {
+            "name": "APACHE 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://{environment}.thoyib07@gmail.com/api/v1",
+            "description": "TodoList RESTful API Server",
+            "variables": {
+                "environment":{
+                    "default": "dev",
+                    "description" : "Server environment",
+                    "enum": ["dev","qa","prod"]
+                }
+            }
+        }
+    ],
+    "paths": {}
+}
