@@ -1,5 +1,5 @@
 {
-    "openAPI" : "3.0.3",
+    "openapi" : "3.0.0",
     "info": {
         "title": "API TodoList application",
         "version": "1.0",
@@ -17,7 +17,7 @@
     },
     "servers": [
         {
-            "url": "https://{environment}.thoyib07@gmail.com/api/v1",
+            "url": "https://{environment}.thoyib07.com/api/v1",
             "description": "TodoList RESTful API Server",
             "variables": {
                 "environment":{
@@ -28,5 +28,93 @@
             }
         }
     ],
-    "paths": {}
+    "externalDocs": {
+        "description": "Youtube Tutorial",
+        "url":"https://www.youtube.com/c/Fireship"
+    },
+    "paths": {
+        "/todolist":{
+            "get":{
+                "summary": "Get All Todolist",
+                "description": "Get all active todolist by default",
+                "parameters": [
+                    {
+                        "name": "include_done",
+                        "in": "query",
+                        "required": false,
+                        "description": "Is include done todolist",
+                        "schema":{
+                            "type": "boolean",
+                            "nullable": true,
+                            "default":true
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": false,
+                        "description": "Filter todolist by name",
+                        "schema":{
+                            "type": "string",
+                            "nullable": true,
+                            "minLength": 1,
+                            "maxLength": 100
+                        }
+                    }
+                ],
+                "responses": {
+
+                }
+            },
+            "post":{
+                "summary": "Create new todolist",
+                "description": "Create new todolist to database",
+                "responses": {
+
+                }
+            }
+        },
+        "/todolist/{todolistId}":{
+            "put":{
+                "summary": "Update existing todolist",
+                "description": "Update existing todolist data in database",
+                "parameters": [
+                    {
+                        "name": "todolistId",
+                        "in": "path",
+                        "required": true,
+                        "description": "Todolist id for updated",
+                        "schema":{
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 100
+                        }
+                    }
+                ],
+                "responses": {
+
+                }
+            },
+            "delete":{
+                "summary": "Delete existing todolist",
+                "description": "Delete existing data todolist in database",
+                "parameters": [
+                    {
+                        "name": "todolistId",
+                        "in": "path",
+                        "required": true,
+                        "description": "Todolist id for deleted",
+                        "schema":{
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 100
+                        }
+                    }
+                ],
+                "responses": {
+
+                }
+            }
+        }
+    }
 }
