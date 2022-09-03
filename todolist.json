@@ -74,7 +74,20 @@
                     "content": {
                         "application/json":{
                             "schema":{
-
+                                "type": "object",
+                                "properties": {
+                                    "name":{
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "required": true
+                                    },
+                                    "priority":{
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "required": true,
+                                        "default": 1
+                                    }
+                                }
                             }
                         }
                     }
@@ -106,7 +119,20 @@
                     "content": {
                         "application/json":{
                             "schema":{
-                                
+                                "type": "object",
+                                "properties": {
+                                    "name":{
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "required": true
+                                    },
+                                    "priority":{
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "required": true,
+                                        "default": 1
+                                    }
+                                }
                             }
                         }
                     }
