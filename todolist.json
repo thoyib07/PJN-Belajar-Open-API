@@ -405,12 +405,10 @@
                 "properties": {
                     "name":{
                         "type": "string",
-                        "minLength": 1,
-                        "required": true
+                        "minLength": 1
                     },
                     "tags":{
                         "type": "array",
-                        "required": false,
                         "minItems": 1,
                         "items": {
                             "type": "string",
@@ -420,7 +418,6 @@
                     "priority":{
                         "type": "integer",
                         "format": "int32",
-                        "required": true,
                         "default": 1
                     }
                 }
